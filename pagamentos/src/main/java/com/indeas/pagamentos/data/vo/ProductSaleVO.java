@@ -23,7 +23,7 @@ public class ProductSaleVO extends RepresentationModel<ProductSaleVO> implements
     private UUID id;
 
     @JsonProperty("id_product")
-    private Long idProduto;
+    private UUID idProduto;
 
     @JsonProperty("quantity")
     private Integer quantity;

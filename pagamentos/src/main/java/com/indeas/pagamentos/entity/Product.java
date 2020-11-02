@@ -1,6 +1,7 @@
 package com.indeas.pagamentos.entity;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +29,7 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Long id;
+    private UUID id;
 
     @Column(name = "stock", nullable = false, length = 10)
     private float stock;
