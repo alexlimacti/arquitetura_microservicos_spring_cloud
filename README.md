@@ -14,7 +14,7 @@ O RabbitMQ é o Service Broker, utilizado para troca de mensagens entre microsse
 - [x] Repository
 - [x] Service
 - [x] Controller
-- [ ] Integração com RabbitMQ
+- [x] Integração com RabbitMQ
 - [ ] Integração com Eureka
 
 ## Microserviço Payment:
@@ -24,6 +24,6 @@ O RabbitMQ é o Service Broker, utilizado para troca de mensagens entre microsse
 - [x] Exceptions
 - [x] Repository
 - [x] Service
-- [ ] Controller
-- [ ] Integração com RabbitMQ
+- [x] Controller
+- [x] Integração com RabbitMQ
 - [ ] Integração com Eureka
