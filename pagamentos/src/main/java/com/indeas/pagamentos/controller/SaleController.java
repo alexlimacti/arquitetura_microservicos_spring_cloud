@@ -44,7 +44,7 @@ public class SaleController {
 
         var sortDirection = "desc".equalsIgnoreCase(direction) ? Direction.DESC : Direction.ASC;
 
-        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "data"));
+        Pageable pageable = PageRequest.of(page, limit, Sort.by(sortDirection, "date"));
 
         Page<SaleVO> sales = saleService.findAll(pageable);
         sales.stream().forEach(p -> p.add(linkTo(methodOn(SaleController.class).findById(p.getId())).withSelfRel()));

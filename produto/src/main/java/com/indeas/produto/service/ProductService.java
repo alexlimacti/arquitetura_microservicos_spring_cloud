@@ -4,6 +4,7 @@ import com.indeas.produto.converter.ProductConverter;
 import com.indeas.produto.data.vo.ProductVO;
 import com.indeas.produto.entity.Product;
 import com.indeas.produto.exception.ResourceNotFoundException;
+import com.indeas.produto.message.ProdutoSendMessage;
 import com.indeas.produto.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,8 +20,13 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ProdutoSendMessage produtoSendMessage;
+
     public ProductVO create(ProductVO productVO) {
-        return ProductConverter.createProductVO(productRepository.save(ProductConverter.createProduct(productVO)));
+        ProductVO prodVoRetorno = ProductConverter.createProductVO(productRepository.save(ProductConverter.createProduct(productVO)));
+        produtoSendMessage.sendMessage(prodVoRetorno);
+        return prodVoRetorno;
     }
 
     public Page<ProductVO> findAll(Pageable pageable){

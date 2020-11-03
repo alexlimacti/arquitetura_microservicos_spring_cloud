@@ -36,7 +36,7 @@ public class Sale implements Serializable {
     @Column(name = "amount", nullable = false, length = 10)
     private Double amount;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "venda", cascade = CascadeType.REFRESH)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "sale", cascade = CascadeType.REFRESH)
     private List<ProductSale> products;
 
 }
