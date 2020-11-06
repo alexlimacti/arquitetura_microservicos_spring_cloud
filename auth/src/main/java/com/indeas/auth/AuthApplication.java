@@ -9,16 +9,19 @@ import com.indeas.auth.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
+@EnableDiscoveryClient
 public class AuthApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuthApplication.class, args);
 	}
 
+	/*
 	@Bean
 	CommandLineRunner init(UserRepository userRepository, PermissionRepository permissionRepository,
 						   BCryptPasswordEncoder passwordEncoder) {
@@ -42,18 +45,18 @@ public class AuthApplication {
 		}
 
 		User admin = new User();
-		admin.setUserName("marvastsi");
+		admin.setUserName("admin");
 		admin.setAccountNonExpired(true);
 		admin.setAccountNonLocked(true);
 		admin.setCredentialsNonExpired(true);
 		admin.setEnabled(true);
-		admin.setPassword(passwordEncoder.encode("marvastsi123"));
+		admin.setPassword(passwordEncoder.encode("admin"));
 		admin.setPermissions(Arrays.asList(permission));
 
-		User find = userRepository.findByUserName("marvastsi");
+		User find = userRepository.findByUserName("admin");
 		if (find == null) {
 			userRepository.save(admin);
 		}
 	}
-
+	*/
 }

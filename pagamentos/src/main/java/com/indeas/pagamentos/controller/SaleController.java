@@ -3,6 +3,7 @@ package com.indeas.pagamentos.controller;
 import com.indeas.pagamentos.data.vo.SaleVO;
 import com.indeas.pagamentos.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,11 +25,19 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequestMapping("/sale")
 public class SaleController {
 
+    @Value("${server.port}")
+    String port;
+
     @Autowired
     private SaleService saleService;
 
     @Autowired
     private PagedResourcesAssembler<SaleVO> assembler;
+
+    @RequestMapping("/mostrarPorta")
+    public String mostrarPorta() {
+        return port;
+    }
 
     @GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
     public SaleVO findById(@PathVariable("id") UUID id) {

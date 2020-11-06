@@ -25,10 +25,10 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Service
 public class JwtTokenProvider {
 
-    @Value("${spring.security.jwt.token.secret-key}")
+    @Value("${security.jwt.token.secret-key}")
     private String secretKey;
 
-    @Value("${spring.security.jwt.token.expire-lenth}")
+    @Value("${security.jwt.token.expire-lenth}")
     private Long expireLength;
 
     @Qualifier("userService")
