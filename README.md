@@ -4,7 +4,7 @@ O Netflix Eureka Server (Service registry) é utilizando para registrar os micro
 O NetFlix Zuul (Gateway) é o responsável por fazer o roteamento.
 O RabbitMQ é o Service Broker, utilizado para troca de mensagens entre microsserviços,
 
-# Andamento
+# Concluído
 
 ## Microserviço Product:
 
@@ -14,8 +14,10 @@ O RabbitMQ é o Service Broker, utilizado para troca de mensagens entre microsse
 - [x] Repository
 - [x] Service
 - [x] Controller
+- [x] Autenticação no microserviço auth
 - [x] Integração com RabbitMQ
-- [ ] Integração com Eureka
+- [x] Integração com Eureka
+- [x] Integração com Zuul (Gateway)
 
 ## Microserviço Payment:
 
@@ -25,5 +27,19 @@ O RabbitMQ é o Service Broker, utilizado para troca de mensagens entre microsse
 - [x] Repository
 - [x] Service
 - [x] Controller
+- [x] Autenticação no microserviço auth
 - [x] Integração com RabbitMQ
-- [ ] Integração com Eureka
+- [x] Integração com Eureka
+- [x] Integração com Zuul (Gateway)
+
+## Microserviço Auth:
+
+- [x] Entidades
+- [x] VO
+- [x] Exceptions
+- [x] Repository
+- [x] Service
+- [x] Controller
+- [x] Integração com RabbitMQ
+- [x] Integração com Eureka
+- [x] Integração com Zuul (Gateway)
